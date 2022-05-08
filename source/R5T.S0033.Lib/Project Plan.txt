@@ -1,0 +1,3 @@
+R5T.S0033.Lib - Generation, initial, parse, simple, for Roslyn syntax elements.
+
+GOALS:
