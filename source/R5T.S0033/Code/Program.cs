@@ -2,58 +2,32 @@ using System;
 using System.Threading;
 using System.Threading.Tasks;
 
-using Microsoft.Extensions.Hosting;
-
-using R5T.Plymouth;
-using R5T.Plymouth.ProgramAsAService;
+using R5T.S0033.Lib;
 
 
 namespace R5T.S0033
 {
-    class Program : ProgramAsAServiceBase
-    {
-        #region Static
-        
+    class Program
+    {        
         static Task Main()
         {
-        
-            return ApplicationBuilder.Instance
-                .NewApplication()
-                .UseProgramAsAService<Program>()
-                .UseT0027_T009_TwoStageStartup<Startup>()
-                .BuildProgramAsAServiceHost()
-                .Run();
+            Program.UsingNamespaceDirective();
+
+            return Task.CompletedTask;
         }
 
-        #endregion
+#pragma warning disable IDE0051 // Remove unused private members
 
-
-                        private IServiceProvider ServiceProvider { get; }
-        
-
-
-                        public Program(IApplicationLifetime applicationLifetime,
-            IServiceProvider serviceProvider)
-            : base(applicationLifetime)
+        private static void CompilationUnit01()
         {
-        
-            this.ServiceProvider = serviceProvider;
+            //var compilationUnit = Instances.SyntaxGenerator
         }
 
-                protected override Task ServiceMain(CancellationToken stoppingToken)
+        private static void UsingNamespaceDirective()
         {
-        
-            return this.RunOperation();
-        }
+            var usingNamespaceDirective = Instances.SyntaxGenerator.UsingSystemNamespaceDirective();
 
-                private async Task RunOperation()
-        {
-        
-        }
-
-                private async Task RunMethod()
-        {
-        
+            Instances.SyntaxOperator_FileOutput.WriteToExampleCodeFilePath(usingNamespaceDirective);
         }
     }
 }

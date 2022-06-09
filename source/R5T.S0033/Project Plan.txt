@@ -1,3 +1,13 @@
-R5T.S0033 - Generation, initial, parse, simple, for Roslyn syntax elements.
+R5T.S0033 - Generation, initial, parse, simple, for Roslyn syntax elements. Useful for quickly examining how syntax elements are parsed.
 
-GOALS:
+Mission: This script is *only* for simply parsing syntax elements, without contexts, without services, without annotations.
+
+This script allows easy experimentation with how Roslyn syntax parsing works.
+
+
+Allowed dependencies:
+
+* R5T.B0006.X0002 - Generation, initial, parse, simple extensions to ISyntaxGenerator base.
+* R5T.F0005 - Generation, initial, parse, simple, Roslyn syntax element functionality.
+
+* R5T.S0032.F001 - Functionality to write syntax elements to an example code file.
